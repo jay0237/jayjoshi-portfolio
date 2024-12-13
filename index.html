@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" href="./assets/images/title-icon.jpg"
+        type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarNav">
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand" href="#main">
+                <img src="./assets/images/logo.png" alt="Logo" id="logo" style="height: 40px;">
+            </a>
+            <!-- Toggler for Mobile View -->
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#main">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link special-link" href="login.php">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <style>
+    /* Custom Navbar Styles */
+    .navbar-custom {
+        background-color: #f9f9f9; /* Light background */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        padding: 1rem 2rem;
+    }
+    
+    .navbar-custom .navbar-brand img {
+        filter: drop-shadow(2px 4px 6px black);
+        transition: transform 0.3s ease;
+    }
+    
+    .navbar-custom .navbar-brand img:hover {
+        transform: scale(1.1);
+    }
+    
+    .navbar-custom .nav-link {
+        color: #333; /* Dark text */
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-custom .nav-link:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #ffd700;
+    }
+    
+    .navbar-custom .nav-link.active {
+        background: #ffd700;
+        color: #1e3c72;
+        box-shadow: 0px 0px 8px rgba(255, 215, 0, 0.7);
+    }
+    
+    .navbar-custom .special-link {
+        background: linear-gradient(90deg, #ff6a00, #ee0979);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(255, 105, 135, 0.3);
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-custom .special-link:hover {
+        background: linear-gradient(90deg, #ee0979, #ff6a00);
+        box-shadow: 0 10px 20px rgba(255, 105, 135, 0.5);
+        transform: translateY(-2px);
+    }
+    
+    /* Navbar Toggler Styles */
+    .custom-toggler {
+        border: none;
+        outline: none;
+    }
+    
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    
+    .custom-toggler:focus {
+        box-shadow: none;
+    }
+    
+    /* Smooth Scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .navbar-custom .nav-link {
+            margin: 5px 0;
+        }
+    }
+    </style>
+    
+    
+
+    <!-- MAIN -->
+    <section id="main" class="min-vh-100 d-flex align-items-center text-center position-relative">
+        <!-- Animated Background -->
+        <div class="animated-bg"></div>
+    
+        <!-- Content -->
+        <div class="container position-relative z-index-2">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Main Heading -->
+                    <h1 class="text-uppercase fw-bold display-1 text-gradient text-dark" data-aos="fade-right">
+                        From Imagination to Realizationx
+                    </h1>
+                    <!-- Subheading -->
+                    <h5 class="text-dark mt-3 mb-4" data-aos="fade-left">
+                        I’m a Creative Web Designer Passionate About Crafting Beautiful Websites
+                    </h5>
+                    <!-- Buttons -->
+                    <div data-aos="fade-up">
+                        <a href="#services" class="btn btn-primary btn-custom me-3">Explore Services</a>
+                        <a href="#contact" class="btn btn-outline-dark btn-custom ms-3">Contact Me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Custom CSS -->
+    <style>
+    /* Section Styling */
+    #main {
+        position: relative;
+        overflow: hidden;
+        color: #333; /* Dark text for visibility */
+        background: linear-gradient(135deg, #00c6ff, #0072ff); /* Vibrant gradient background */
+    }
+    
+    /* Animated Background */
+    .animated-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(240, 240, 240, 0.7));
+        z-index: 1;
+        animation: gradientAnimation 15s ease infinite;
+    }
+    
+    /* Gradient Animation */
+    @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+    /* Text Gradient Effect */
+    .text-gradient {
+        background: linear-gradient(135deg, #ff6a00, #ffcc00); /* Warm gradient colors */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: #333; /* Fallback text color */
+    }
+    
+    /* Button Styles */
+    .btn-custom {
+        font-weight: bold;
+        font-size: 16px;
+        padding: 12px 24px;
+        border-radius: 30px; /* Rounded buttons */
+        transition: all 0.3s ease;
+    }
+    
+    /* Primary Button */
+    .btn-custom.btn-primary {
+        background: linear-gradient(135deg, #ff6a00, #ffcc00);
+        color: #fff;
+        border: none;
+    }
+    
+    .btn-custom.btn-primary:hover {
+        background: linear-gradient(135deg, #ffcc00, #ff6a00);
+        transform: scale(1.1);
+    }
+    
+    /* Outline Button */
+    .btn-custom.btn-outline-dark {
+        border: 2px solid #0072ff;
+        color: #0072ff;
+    }
+    
+    .btn-custom.btn-outline-dark:hover {
+        background-color: rgba(0, 114, 255, 0.1);
+        color: #fff;
+        border-color: #0072ff;
+    }
+    
+    /* Add Some Shadow to Text */
+    h1, h5 {
+        color: #333; /* Darker text color */
+        text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2); /* Soft text shadow */
+    }
+    
+    /* Adjust Z-Index for Proper Layering */
+    .z-index-2 {
+        z-index: 2;
+        position: relative;
+    }
+    
+    /* Light and Clean Theme Colors */
+    body {
+        background-color: #f5f5f5;
+        color: #333; /* Text color for readability */
+    }
+    
+    /* Section Background */
+    #main {
+        background: linear-gradient(135deg, #00c6ff, #0072ff); /* Clean, bright background */
+    }
+    
+    /* Animated Background Adjustments */
+    .animated-bg {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(240, 240, 240, 0.7)); /* Soft, light gradient */
+    }
+    
+    /* Button Customizations for Hover Effects */
+    .btn-outline-dark {
+        border: 2px solid #0072ff;
+        color: #0072ff;
+    }
+    
+    .btn-outline-dark:hover {
+        background-color: rgba(0, 114, 255, 0.1);
+        color: #fff;
+        border-color: #0072ff;
+    }
+    </style>
+    
+    
+    
+    
+
+    <!-- ABOUT -->
+    <section id="about" class="section-padding bg-light text-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold text-dark text-shadow" data-aos="fade-down" data-aos-delay="50">About Me</h1>
+                        <div class="line mx-auto my-3"></div>
+                        <p class="lead text-muted text-dark" data-aos="fade-down" data-aos-delay="200">
+                            Designing digital experiences that balance creativity and functionality. Let's create something unique together.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Row to split content into two columns (Image and Text) -->
+            <div class="row align-items-center">
+    
+                <!-- Left Column (Image) -->
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="500">
+                    <div class="about-image-container">
+                        <img src="./assets/images/about.jpg" alt="Jay Joshi" class="img-fluid rounded-lg shadow-md">
+                    </div>
+                </div>
+    
+                <!-- Right Column (Text and Information) -->
+                <div class="col-md-6 mt-4 mt-md-0" data-aos="fade-left" data-aos-delay="500">
+                    <h2 class="mt-4 text-dark">Hi, I'm Jay Joshi</h2>
+                    <p class="text-dark">As a passionate UI/UX designer and web developer, I focus on building seamless, intuitive digital experiences that are both functional and aesthetically pleasing. I specialize in creating responsive websites and applications with user-centered design principles.</p>
+    
+                    <!-- Education Info -->
+                    <div class="about-info-box mb-4">
+                        <div class="iconbox">
+                            <i class="ri-bookmark-fill"></i>
+                        </div>
+                        <div class="info-content">
+                            <h5 class="text-dark">My Education</h5>
+                            <p class="text-muted">Currently pursuing a Diploma in Computer Engineering (3rd Year) at Marwadi University.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Services Info -->
+                    <div class="about-info-box mb-4">
+                        <div class="iconbox">
+                            <i class="ri-settings-5-fill"></i>
+                        </div>
+                        <div class="info-content">
+                            <h5 class="text-dark">My Services</h5>
+                            <p class="text-muted">UI/UX Design & Web Development: Creating aesthetically pleasing and user-friendly websites and digital interfaces.</p>
+                        </div>
+                    </div>
+    
+                    <!-- Get in Touch Info -->
+                    <div class="about-info-box">
+                        <div class="iconbox">
+                            <i class="ri-chat-3-line"></i>
+                        </div>
+                        <div class="info-content">
+                            <h5 class="text-dark">Get in Touch</h5>
+                            <p class="text-muted">Let’s collaborate on exciting projects. Reach out for web design, UI/UX challenges, or any creative project!</p>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+    
+    <!-- Custom CSS -->
+    <style>
+        /* Light Background and Dark Text */
+        .bg-light {
+            background-color: #f9f9f9; /* Light background */
+        }
+    
+        .text-dark {
+            color: #333; /* Dark text */
+        }
+    
+        /* Image container with subtle shadow */
+        .about-image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Info Boxes with Light Background and Dark Text */
+        .about-info-box {
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for info boxes */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+    
+        /* Icon boxes with accent color */
+        .about-info-box .iconbox {
+            background-color: #00bcd4; /* Light blue accent */
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            margin-right: 20px;
+        }
+    
+        /* Text styles inside info boxes */
+        .about-info-box .info-content h5 {
+            font-size: 1.2rem;
+            margin: 0;
+            color: #333; /* Dark text for headings */
+        }
+    
+        .about-info-box .info-content p {
+            color: #666; /* Muted text for paragraph */
+        }
+    
+        /* Styling for the title line */
+        .line {
+            width: 80px;
+            height: 4px;
+            background-color: #00bcd4; /* Light blue accent */
+            border-radius: 2px;
+            margin: 10px auto;
+        }
+    
+        /* Text Shadows */
+        .text-shadow {
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Media Queries for Mobile Responsiveness */
+        @media (max-width: 992px) {
+            .about-image-container {
+                max-width: 100%;
+            }
+            .row {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    
+        @media (max-width: 768px) {
+            .col-md-6 {
+                text-align: center;
+            }
+            .about-info-box {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    
+
+    <!-- SERVICES -->
+    <section id="services" class="section-padding bg-light text-dark">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold text-dark" data-aos="fade-up" data-aos-delay="50">Quality Services</h1>
+                        <div class="line"></div>
+                        <p class="text-muted" data-aos="fade-down" data-aos-delay="50">
+                            I focus on delivering seamless, user-friendly solutions. My background in CRM systems and passion for 3D rendering further enhance my ability to create impactful and innovative experiences.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Services List -->
+            <div class="row g-3 text-center">
+                <!-- UX Design -->
+                <div class="col-lg-4 col-sm-6" data-aos="flip-left" data-aos-duration="250">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-user-settings-fill"></i> <!-- UX Design Icon -->
+                        </div>
+                        <h5 class="pt-3 text-dark">UX DESIGN</h5>
+                        <p class="text-muted">I specialize in creating intuitive and visually appealing designs that enhance user interaction.</p>
+                    </div>
+                </div>
+            
+                <!-- Web Development -->
+                <div class="col-lg-4 col-sm-6" data-aos="flip-down" data-aos-duration="250">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-code-line"></i> <!-- Web Development Icon -->
+                        </div>
+                        <h5 class="pt-3 text-dark">Web Development</h5>
+                        <p class="text-muted">Curabitur finibus aliquam diam, in facilisis eros consectetur in. Vestibulum a pellentesque magna.</p>
+                    </div>
+                </div>
+            
+                <!-- Website Development -->
+                <div class="col-lg-4 col-sm-6" data-aos="flip-right" data-aos-duration="250">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-global-line"></i> <!-- Website Development Icon -->
+                        </div>
+                        <h5 class="pt-3 text-dark">Website Development</h5>
+                        <p class="text-muted">User-friendly websites that combine functionality with modern design.</p>
+                    </div>
+                </div>
+            
+                <!-- Business Logo Design -->
+                <div class="col-lg-4 col-sm-6" data-aos="flip-left" data-aos-duration="250">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-pencil-ruler-2-line"></i> <!-- Logo Design Icon -->
+                        </div>
+                        <h5 class="pt-3 text-dark">Design Your Business Logo</h5>
+                        <p class="text-muted">I craft unique and memorable logos that capture the essence of a brand. My designs combine creativity and strategy to create powerful visual identities.</p>
+                    </div>
+                </div>
+            
+                <!-- Experience -->
+                <div class="col-lg-4 col-sm-6" data-aos="flip-up" data-aos-duration="250">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-user-star-line"></i> <!-- Experience Icon -->
+                        </div>
+                        <h5 class="pt-3 text-dark">Experience</h5>
+                        <p class="text-muted">My approach blends creativity with strategic thinking to deliver logos that resonate with your brand’s essence.</p>
+                    </div>
+                </div>
+            
+                <!-- Collaboration Invitation -->
+                <div class="col-lg-4 col-sm-6" data-aos="flip-right" data-aos-duration="250">
+                    <div class="service theme-shadow p-lg-5 p-4">
+                        <div class="iconbox">
+                            <i class="ri-handshake-line"></i> <!-- Collaboration Icon -->
+                        </div>
+                        <h5 class="pt-3 text-dark">Let's Make Something Better</h5>
+                        <p class="text-muted">Feel free to reach out for any design or development needs. Let’s collaborate and bring your ideas to life!</p>
+                    </div>
+                </div>
+            </div>
+            
+    <!-- Custom CSS -->
+    <style>
+        /* Light Background and Dark Text */
+        .bg-light {
+            background-color: #f9f9f9; /* Light background */
+        }
+    
+        .text-dark {
+            color: #333; /* Dark text */
+        }
+    
+        /* Service Box with Light Background */
+        .service {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+    
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+    
+        /* Icon Box Styles */
+        .iconbox {
+            background-color: #00bcd4; /* Light blue accent */
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+    
+        /* Text Styles in Service Boxes */
+        .service h5 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333; /* Dark text */
+        }
+    
+        .service p {
+            color: #666; /* Muted text for description */
+            font-size: 1rem;
+        }
+    
+        /* Section Title Line */
+        .line {
+            width: 80px;
+            height: 4px;
+            background-color: #00bcd4; /* Light blue accent */
+            border-radius: 2px;
+            margin: 10px auto;
+        }
+    
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .service {
+                padding: 3rem 2rem;
+            }
+        }
+    </style>
+    
+    
+
+    <!-- COUNTER -->
+   
+
+    <!-- PORTFOLIO -->
+    <div id="portfolio" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title text-center">
+                        <h1 class="display-4 fw-semibold" data-aos="fade-up">Portfolio</h1>
+                        <div class="line"></div>
+                        <p data-aos="fade-down">
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="portfolio-item1 image-zoom mt-4" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
+                        <div class="image-zoom-warpper">
+                            <img src="./assets/images/project1.png" alt="">
+                        </div>
+                        <a href="./assets/images/project1.png" data-fancybox="gallery" class="iconbox"><i
+                                class="ri-search-2-line"></i></a>
+                    </div>
+                    <div class="portfolio-item1 image-zoom mt-4" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
+                        <div class="image-zoom-warpper">
+                            <img src="./assets/images/project2.png" alt="">
+                        </div>
+                        <a href="./assets/images/project2.png" data-fancybox="gallery" class="iconbox"><i
+                                class="ri-search-2-line"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item2 image-zoom mt-4" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
+                        <div class="image-zoom-warpper">
+                            <img src="./assets/images/project3.png" alt="">
+                        </div>
+                        <a href="./assets/images/project3.png" data-fancybox="gallery" class="iconbox"><i
+                                class="ri-search-2-line"></i></a>
+                    </div>
+                    <div class="portfolio-item3 image-zoom mt-4" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
+                        <div class="image-zoom-warpper">
+                            <img src="./assets/images/project4.png" alt="">
+                        </div>
+                        <a href="./assets/images/project4.png" data-fancybox="gallery" class="iconbox"><i
+                                class="ri-search-2-line"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="portfolio-item4 image-zoom mt-4" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
+                        <div class="image-zoom-warpper">
+                            <img src="./assets/images/project5.jpg" alt="">
+                        </div>
+                        <a href="./assets/images/project5.jpg" data-fancybox="gallery" class="iconbox"><i
+                                class="ri-search-2-line"></i></a>
+                    </div>
+                    <div class="portfolio-item4 image-zoom mt-4" data-aos="flip-left" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="1500">
+                        <div class="image-zoom-warpper">
+                            <img src="./assets/images/project6.jpg" alt="">
+                        </div>
+                        <a href="./assets/images/project6.jpg" data-fancybox="gallery" class="iconbox"><i
+                                class="ri-search-2-line"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIAL -->
+    <div id="journey" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="section-title">
+                        <h1 class="display-4 fw-semibold" data-aos="fade-up">My Journey</h1>
+                        <div class="line"></div>
+                        <p data-aos="fade-down">From my educational background to hands-on experience in various technical fields, my journey has been a blend of continuous learning, practical application, and growth in both design and technology.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-5 gx-4" data-aos="fade-up" data-aos-delay="500">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="journey-step">
+                        <div class="journey-head p-4 bg-white theme-shadow" data-aos="fade-up" data-aos-duration="1500">
+                            <h5>Education</h5>
+                            <p>I am currently pursuing a <strong>Diploma in Computer Engineering</strong> in my 3rd year at <strong>Marwadi University</strong>, which forms the foundation of my technical knowledge in computer systems and programming.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="journey-step">
+                        <div class="journey-head p-4 bg-white theme-shadow" data-aos="fade-up" data-aos-duration="1500">
+                            <h5>Certifications</h5>
+                            <p>I've expanded my skills with certifications in <strong>Advanced Database Systems</strong>, <strong>Machine Learning</strong>, and <strong>Career Skills in Software Development</strong>, preparing me for both technical and creative challenges in the industry.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="journey-step">
+                        <div class="journey-head p-4 bg-white theme-shadow" data-aos="fade-up" data-aos-duration="1500">
+                            <h5>Freelance Design & Development</h5>
+                            <p>With a passion for <strong>UI/UX design</strong> and <strong>web development</strong>, I have successfully worked as a freelance designer, helping clients create visually engaging user interfaces and dynamic websites. My expertise also includes working with <strong>no-code solutions</strong> for quicker and efficient delivery.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="journey-step">
+                        <div class="journey-head p-4 bg-white theme-shadow" data-aos="fade-up" data-aos-duration="1500">
+                            <h5>Technical Experience</h5>
+                            <p>I gained valuable experience during an internship focused on <strong>computer optimization and repair</strong>, which helped me deepen my technical understanding of hardware and software systems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="journey-step">
+                        <div class="journey-head p-4 bg-white theme-shadow" data-aos="fade-up" data-aos-duration="1500">
+                            <h5>Exploring New Frontiers</h5>
+                            <p>My journey doesn't stop here. I’m constantly exploring <strong>3D rendering</strong> and <strong>CRM systems</strong>, areas that further fuel my passion for learning and expanding my skill set in both creative and technical fields.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+    #journey {
+        background-color: #f7f7f7;
+        padding: 60px 0;
+    }
+    
+    #journey .section-title h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #333;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+    }
+    
+    #journey .section-title .line {
+        width: 60px;
+        height: 4px;
+        background-color: #007bff;
+        margin: 20px auto;
+    }
+    
+    #journey .section-title p {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.7;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .journey-step {
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .journey-step:hover {
+        transform: translateY(-10px);
+    }
+    
+    .journey-head {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease;
+    }
+    
+    .journey-head:hover {
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .journey-head h5 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+    }
+    
+    .journey-head p {
+        font-size: 1rem;
+        color: #555;
+        line-height: 1.6;
+    }
+    
+    .journey-head::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 4px;
+        background-color: #007bff;
+        border-radius: 4px;
+    }
+    
+    .journey-step img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 15px;
+    }
+    
+    .journey-step .journey-person {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .journey-step .journey-person h5 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    
+    .journey-step .journey-person small {
+        font-size: 0.9rem;
+        color: #999;
+    }
+    
+    @media (max-width: 767px) {
+        #journey .section-title h1 {
+            font-size: 2.5rem;
+        }
+    
+        .journey-head {
+            padding: 20px;
+        }
+    
+        .journey-head h5 {
+            font-size: 1.4rem;
+        }
+    
+        .journey-head p {
+            font-size: 0.95rem;
+        }
+    }
+    </style>
+    
+
+    <!-- CONTACT -->
+    <div id="contact" class="section-padding" style="background-color: #1e1e1e; color: #fff;">
+        <div class="container" style="padding-top: 6rem;">
+            <!-- Section Header -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="section-title">
+                        <h1 class="display-4 text-white fw-semibold" data-aos="fade-down">Get in Touch with Me</h1>
+                        <div class="line bg-brand-color"></div>
+                        <p class="text-white">I'd love to hear your thoughts, ideas, or any collaboration opportunities. Feel free to reach out!</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Contact Form -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="flip-down">
+                    <form id="contact-form" action="submit_contact.php" method="POST" class="row g-4 p-lg-5 p-4 bg-dark rounded-lg shadow-lg">
+                        <div class="form-group col-lg-6">
+                            <input type="text" name="name" class="form-control bg-dark text-light" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <input type="email" name="email" class="form-control bg-dark text-light" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group col-lg-12">
+                            <textarea name="message" rows="5" class="form-control bg-dark text-light" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <div class="form-group col-lg-12 d-grid">
+                            <button type="submit" class="btn btn-brand btn-lg">Send Message</button>
+                        </div>
+                    </form>
+    
+                    <!-- Success/Error Messages -->
+                    <div id="form-response" style="display: none;" class="alert alert-success mt-3 bg-success text-white">Thank you for your message! I'll get back to you soon.</div>
+                    <div id="form-error" style="display: none;" class="alert alert-danger mt-3 bg-danger text-white">Oops! Something went wrong. Please try again later.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- FOOTER -->
+    <footer style="background-color: rgba(0, 0, 0, 0.938);">
+        <div class="footer-top text-center">
+            <div class="container pt-4">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#main"><img src="logo.png" alt="" style="height: 20%;"></a>
+                        <div class="social-icons mt-3">
+                            <div class="social" style="margin-right: 10px;">
+                                <a href="https://x.com/JayJosh07993732?t=NzgXbWdEssGyAD6SvrFnoQ&s=09" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                            </div>
+                            <div class="social">
+                                <a href="https://github.com/jay0237" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            </div>
+                            <div class="social" style="margin-left: 10px;">
+                                <a href="https://www.instagram.com/jayjoshi755?igsh=MW5zcXBhY2RpOG84NQ==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                            <div class="social" style="margin-left: 10px;">
+                                <a href="https://www.linkedin.com/in/jay-joshi-12aa04283/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                            </div>
+                            <!-- Added WhatsApp Icon -->
+                            <div class="social" style="margin-left: 10px;">
+                                <a href="https://wa.me/7862055521" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                        <div class="footerline"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-auto mb-2">
+                        <p class="mb-0"><i class="ri-copyright-line"></i>Copyright. All Rights Reserved</p>
+                    </div>
+                    <div class="col-auto mb-2">
+                        <p class="mb-0">Designed by <a href="#">Jay Joshi</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+ journey-head    
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://kit.fontawesome.com/5c1ec7558a.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
